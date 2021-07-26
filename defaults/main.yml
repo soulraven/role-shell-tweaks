@@ -1,6 +1,4 @@
 ---
-
----
 # .. vim: foldmarker=[[[,]]]:foldmethod=marker
 
 # .. Copyright (C) 2021 Constantin Zaharia <constantin.zaharia@progeek.ro>
@@ -10,6 +8,17 @@
 
 # General configuration [[[
 # -------------------------
+
+# .. envvar:: init__base_packages [[[
+init__base_packages:
+  - screenfetch
+  - neofetch
+# ]]]
+
+# .. envvar:: init_extra_packages [[[
+# Extra packages to install on deploy
+init__extra_packages: []
+# ]]]
 
 # .. envvar:: shell_tweaks_state [[[
 # Set the state of the shell tweaks if are installed or not

@@ -1,5 +1,18 @@
 ---
 
+- name: Update OS packages
+  apt:
+    update_cache: yes
+    upgrade: dist
+
+- name: Install OS packages
+  package:
+    name: "{{ q('flattened', (init__base_packages
+                              + init__extra_packages)) }}"
+    state: latest
+  register: init__os_packages
+  until: init__os_packages is succeeded
+  
 - name: Clone the Shell Tweaks from github
   git:
     repo: "{{ shell_tweaks_git_url }}"
